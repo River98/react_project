@@ -3,27 +3,38 @@ import styled from 'styled-components';
 
 const Selection = styled.select`
   font-size: 1em;
-  text-align: center;
-  color: palevioletred;
-  padding: 0px 20px;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: ${props => props.theme.main};
+  border: 2px solid ${props => props.theme.main};
 `;
 const SelectionOptions = styled.option`
   color: palevioletred;
   font-size: 1em;
 `;
 const Descriptions = styled.p`
-  color: #b4f4ff;
+  color: palevioletred;
   font-size: 1em;
 `
 const Button = styled.button`
   font-size: 1em;
   padding: 0.25em 1em;
   border-radius: 3px;
+  background-color: #ffffff;
+  &:hover {
+    background-color: rgb(200,200,200);
+  }
 
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
 `;
 Button.defaultProps = {
+  theme: {
+    main: "palevioletred"
+  }
+}
+Selection.defaultProps = {
   theme: {
     main: "palevioletred"
   }
@@ -46,27 +57,27 @@ class Connect extends React.Component {
   }
 
   handleSubmit(event) {
-    if (this.state.value == 'New York') {
+    if (this.state.value === 'New York') {
       this.ip.value = "111.111.111.111"
       this.ms.value = "1"
       this.location.value = "United States"
-    } else if (this.state.value == 'California') {
+    } else if (this.state.value === 'California') {
       this.ip.value = "222.222.222.222"
       this.ms.value = "2"
       this.location.value = "United States"
-    } else if (this.state.value == 'London') {
+    } else if (this.state.value === 'London') {
       this.ip.value = "333.333.333.333"
       this.ms.value = "3"
       this.location.value = "United Kingdom"
-    } else if (this.state.value == 'Seoul') {
+    } else if (this.state.value === 'Seoul') {
       this.ip.value = "444.444.444.444"
       this.ms.value = "4"
       this.location.value = "Korea"
-    } else if (this.state.value == 'Beijing') {
+    } else if (this.state.value === 'Beijing') {
       this.ip.value = "555.555.555.555"
       this.ms.value = "5"
       this.location.value = "China"
-    } else if (this.state.value == 'Tokyo') {
+    } else if (this.state.value === 'Tokyo') {
       this.ip.value = "666.666.666.666"
       this.ms.value = "6"
       this.location.value = "Japan"

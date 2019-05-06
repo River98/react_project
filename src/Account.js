@@ -2,17 +2,21 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 
 const Input = styled.input`
-  padding: 0.5em;
   color: palevioletred;
-  background: #ffffff;
-  border: none;
+  padding: 0.25em 1em;
   border-radius: 3px;
+  background-color: #ffffff;
+  border: 2px solid palevioletred};
 `;
 
 const Button = styled.input`
   font-size: 1em;
   padding: 0.25em 1em;
   border-radius: 3px;
+  background-color: #ffffff;
+  &:hover {
+    background-color: rgb(200,200,200);
+  }
 
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
@@ -44,8 +48,8 @@ class Account extends Component {
   }
 
   handleSubmit(event) {
-    if (document.getElementById("Username").value == 'user' 
-    && document.getElementById("Password").value == 'pass') {
+    if (document.getElementById("Username").value === 'user' 
+    && document.getElementById("Password").value === 'pass') {
       this.confirmation.value = "Login Successful"
       document.getElementById("confirmation").innerHTML = this.confirmation.value;
     } else {
